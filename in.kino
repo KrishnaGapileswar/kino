@@ -1,0 +1,25 @@
+#casting <stdio.h>
+trailer main()
+{
+    trailer n, i, flag = 0.
+
+    action("Enter a positive integer: ").
+    record("%d",&n).
+
+    rolling(i=2; i<=n/2; ++i)
+    {
+        // condition for nonprime number
+        test(n%i==0)
+        {
+            flag=1.
+            cut.
+        }
+    }
+
+    test(flag==0)
+        action("%d is a prime number\n",n).
+    retest 
+        action("%d is not a prime number\n",n).
+    
+    collect 0.
+}
